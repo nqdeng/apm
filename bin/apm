@@ -1,0 +1,63 @@
+#! /usr/bin/env node
+
+/**
+ * APM - Bin
+ * Copyright(c) 2012 ~ 2012 Alibaba.com, Inc.
+ * MIT Licensed
+ */
+
+var program = require('commander'),
+	apm = require('apm'),
+	version = require('../package.json').version;
+	
+var bingo = false; // Is Command parameters accepted.
+
+program
+	.version(version)
+	.usage('<command>');
+
+program
+	.command('build')
+	.description('Build project')
+	.action(function (dir) {
+		bingo = true;
+		apm.run('build');
+	});
+	
+program
+	.command('clean')
+	.description('Clean project directory')
+	.action(function (dir) {
+		bingo = true;
+		apm.run('clean');
+	});
+	
+program
+	.command('install')
+	.description('Install dependencies')
+	.action(function (dir) {
+		bingo = true;
+		apm.run('install');
+	});
+
+program
+	.command('reset')
+	.description('Clean module cache')
+	.action(function (dir) {
+		bingo = true;
+		apm.run('reset');
+	});
+
+program
+	.command('help')
+	.description('Display help information')
+	.action(function () {
+		bingo = true;
+		program.help();
+	});
+
+program.parse(process.argv);
+
+if (!bingo) {
+	console.log('Type \'apm help\' for usage.');
+}

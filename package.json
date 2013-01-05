@@ -1,0 +1,26 @@
+{
+	"name": "apm",
+	"description": "Customized SPM for Alibaba.com",
+	"keywords": [
+		"spm",
+		"seajs"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/nqdeng/apm.git"
+	},
+	"author": "Nanqiao Deng <nqdeng@gmail.com>",
+	"version": "1.0.0",
+	"engines": {
+		"node": "0.8.x"
+	},
+	"dependencies": {
+		"commander": "1.0.x",
+		"spm": "*"
+  	},
+	"main": "lib/main.js",
+	"bin" : {
+		"apm": "./bin/apm",
+		"spm": "./bin/spm"
+	}
+}
