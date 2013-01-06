@@ -41,14 +41,6 @@ program
 	});
 
 program
-	.command('reset')
-	.description('Clean module cache')
-	.action(function (dir) {
-		bingo = true;
-		apm.run('reset');
-	});
-
-program
 	.command('help')
 	.description('Display help information')
 	.action(function () {
